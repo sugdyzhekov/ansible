@@ -2,9 +2,7 @@ FROM python:2.7-alpine
 
 LABEL maintainer="Sergey Ugdyzhekov, sergey@ugdyzhekov.org"
 
-#ENV ansible_version v1.9.6-1
-#ENV ansible_version v2.1.4.0-1
-ENV ansible_version v2.2.1.0-1
+ENV ansible_version v1.9.6-1
 
 RUN apk --no-cache add git mariadb-client mariadb-dev
 RUN pip install -U pysphere boto docker-py awscli 
