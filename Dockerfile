@@ -12,6 +12,8 @@ RUN apk --no-cache add --virtual build-dependencies gcc python-dev libffi-dev li
     pip install mysql-python && \
     apk del build-dependencies
 
+ADD https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py /usr/local/lib/python2.7/site-packages/ansible/plugins/inventory/
+RUN chmod 755 /usr/local/lib/python2.7/site-packages/ansible/plugins/inventory/ec2.py
 COPY plugins/callback/timestamp.py /usr/local/lib/python2.7/site-packages/ansible/plugins/callback/
 COPY ansible.cfg /etc/ansible/ansible.cfg
 
