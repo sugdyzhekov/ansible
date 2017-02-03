@@ -18,4 +18,4 @@ COPY plugins/callback/timestamp.py /usr/local/lib/python2.7/site-packages/ansibl
 COPY ansible.cfg /etc/ansible/ansible.cfg
 
 WORKDIR /workbench
-ENTRYPOINT ["/usr/local/bin/ansible-playbook"]
+ENTRYPOINT ["/bin/sh", "-c"]
