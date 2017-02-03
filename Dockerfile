@@ -16,6 +16,8 @@ ADD https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec
 RUN chmod 755 /usr/local/lib/python2.7/site-packages/ansible/plugins/inventory/ec2.py
 COPY plugins/callback/timestamp.py /usr/local/lib/python2.7/site-packages/ansible/plugins/callback/
 COPY ansible.cfg /etc/ansible/ansible.cfg
+COPY exec.sh /bin/exec.sh
+RUN chmod +x /bin/exec.sh
 
 WORKDIR /workbench
-ENTRYPOINT ["/bin/sh", "-c"]
+ENTRYPOINT ["/bin/exec.sh"]
