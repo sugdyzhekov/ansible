@@ -4,8 +4,8 @@ LABEL maintainer="Sergey Ugdyzhekov, sergey@ugdyzhekov.org"
 
 ENV ansible_version v1.9.6-1
 
-RUN apk --no-cache add git mariadb-client mariadb-dev
-RUN pip install -U pysphere boto docker-py awscli 
+RUN apk --no-cache add git mariadb-client mariadb-dev libffi openssh docker
+RUN pip install -U pysphere boto boto3 docker-py awscli hvac
 
 RUN apk --no-cache add --virtual build-dependencies gcc python-dev libffi-dev linux-headers musl-dev openssl-dev && \
     pip install git+git://github.com/ansible/ansible.git@${ansible_version} && \
