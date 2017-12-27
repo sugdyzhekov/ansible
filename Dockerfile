@@ -5,7 +5,7 @@ LABEL maintainer="Sergey Ugdyzhekov, sergey@ugdyzhekov.org"
 ENV ansible_version v2.2.1.0-1
 
 RUN apk --no-cache add git mariadb-client mariadb-dev libffi openssh docker
-RUN pip install -U pysphere boto boto3 docker-py awscli hvac
+RUN pip install -U pysphere boto boto3 docker-py awscli hvac python-consul
 
 RUN apk --no-cache add --virtual build-dependencies gcc python-dev libffi-dev linux-headers musl-dev openssl-dev && \
     pip install git+git://github.com/ansible/ansible.git@${ansible_version} && \
